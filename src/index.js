@@ -11,6 +11,26 @@ class D {
 	get yr() {
 		return this._date.getFullYear() % 100
 	}
+
+	get month() {
+		return months[this._date.getMonth()]
+	}
+
+	get mon() {
+		return mons[this._date.getMonth()]
+	}
+
+	get day() {
+		return days[this._date.getDay()]
+	}
+
+	get dy() {
+		return dys[this._date.getDay()]
+	}
+
+	get date() {
+		return this._date.getDate()
+	}
 }
 
 // The date Object can be initialized in different ways:
