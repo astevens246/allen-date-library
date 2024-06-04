@@ -1,3 +1,4 @@
+const { months, mons, days, dys } = require('./utils')
 class D {
 	constructor(...args) { //args is an array of parameters 
 		this._date = new Date(...args)
