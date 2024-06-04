@@ -31,23 +31,75 @@ class D {
 	get date() {
 		return this._date.getDate()
 	}
+
+	get hours() {
+		return this._date.getHours()
+	}
+
+	get mins() {
+		return this._date.getMinutes()
+	}
+
+	get secs() {
+		return this._date.getSeconds()
+	}
+//Define the format method in the D class that takes a mask string as an argument:
+// Initialize an empty string, dateStr
+
+// Define an object, special, where each key is a special character and each value is the corresponding date part
+
+// Loop over each character in the mask string:
+// 	If the character is a key in the special object:
+// 		Append the value of that key in the special object to dateStr
+// 	Else:
+// 		Append the character to dateStr
+
+// Return dateStr
+	format(str = '') {
+		let dateStr = '';
+
+		const special = {
+            'Y': this.year,
+            'y': this.yr,
+            'M': this.month,
+            'm': this.mon,
+            'D': String(this.date).padStart(2, '0'),
+            'd': this.date,
+            'L': this.day,
+            'l': this.dy,
+            '#': this.ordinal(this.date),
+            'H': String(this.hours).padStart(2, '0'),
+            'h': this.hours,
+            'I': String(this.mins).padStart(2, '0'),
+            'i': this.mins,
+            'S': String(this.secs).padStart(2, '0'),
+            's': this.secs
+		};
+
+		for (let i = 0; i < str.length; i+= 1) {
+			if (special[str[i]] !== undefined) {
+				dateStr += special[str[i]];
+			} else {
+				dateStr += str[i];
+			}
+		}
+
+		return dateStr;
+	}
+
 }
 
-// The date Object can be initialized in different ways:
-const a = new D() // no parameters
-console.log(`Year for a: ${a.year}, Yr for a: ${a.yr}`);
-
-const b = new D('January 1, 1970') // with a string
-console.log(`Year for b: ${b.year}, Yr for b: ${b.yr}`);
-
-const c = new D(2001, 4, 12, 16, 45) // with year, month, date, hours, mins
-console.log(`Year for c: ${c.year}, Yr for c: ${c.yr}`);
-
 const d = new D(new Date()) // with another date object
-console.log(`Year for d: ${d.year}, Yr for d: ${d.yr}`);
 
-
-console.log(d.year)
-console.log(d.yr)
+console.log( d.year )  // 2021 - Full year
+console.log( d.yr )    // 21   - Short year
+console.log( d.month ) // July - Full month
+console.log( d.mon )   // Jul  - Short month
+console.log( d.day )   // Tuesday - Full day
+console.log( d.dy )    // Tue  - Short day
+console.log( d.date )  // 27   - Date
+console.log( d.hours ) // 18   - Hour
+console.log( d.mins )  // 6    - Minutes
+console.log( d.secs )  // 5    - Seconds
 
 module.exports = D
