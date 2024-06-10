@@ -1,60 +1,107 @@
 const { months, mons, days, dys } = require('./utils')
+
+/**
+ * Utility class for date manipulation.
+ */
 class D {
+	/**
+     * Constructs a new D object.
+     * @param {...any} args - The arguments to pass to the Date constructor.
+     */
 	constructor(...args) { //args is an array of parameters 
 		this._date = new Date(...args)
 	}
-
+    /**
+     * Gets the full year.
+     * @returns {number} The full year.
+     */
 	get year() {
 		return this._date.getFullYear()
 
 	}
+	/** 
+	 * Get the short year
+	 * @returns {number} The short year
+	 */
 	get yr() {
 		return this._date.getFullYear() % 100
 	}
-
+	/**
+	 * Get the month
+	 * @returns {string} The month
+	 */
 	get month() {
 		return months[this._date.getMonth()]
 	}
-
+	/**
+	 * Get the short month
+	 * @returns {string} The short month
+	 * */
 	get mon() {
 		return mons[this._date.getMonth()]
 	}
-
+	/**
+	 * Get the day
+	 * @returns {string} The day
+	 * */
 	get day() {
 		return days[this._date.getDay()]
 	}
-
+	/**
+	 * Get the short day
+	 * @returns {string} The short day
+	 * */
 	get dy() {
 		return dys[this._date.getDay()]
 	}
+	/**
+	 * Get the date
+	 * @returns {number} The date
+	 * */
 
 	get date() {
 		return this._date.getDate()
 	}
-
+	/**
+	 * Get the hours
+	 * @returns {number} The hours
+	 * */
 	get hours() {
 		return this._date.getHours()
 	}
-
+	/**
+	 * Get the minutes
+	 * @returns {number} The minutes
+	 * */
 	get mins() {
 		return this._date.getMinutes()
 	}
-
+	/**
+	 * Get the seconds
+	 * @returns {number} The seconds
+	 * */
 	get secs() {
 		return this._date.getSeconds()
 	}
-//Define the format method in the D class that takes a mask string as an argument:
-// Initialize an empty string, dateStr
+/** Define the format method in the D class that takes a mask string as an argument:
+ Initialize an empty string, dateStr
 
-// Define an object, special, where each key is a special character and each value is the corresponding date part
+ Define an object, special, where each key is a special character and each value is the corresponding date part
 
-// Loop over each character in the mask string:
-// 	If the character is a key in the special object:
-// 		Append the value of that key in the special object to dateStr
-// 	Else:
-// 		Append the character to dateStr
+ Loop over each character in the mask string:
+ 	If the character is a key in the special object:
+ 		Append the value of that key in the special object to dateStr
+ 	Else:
+ 		Append the character to dateStr
 
-// Return dateStr
+ Return dateStr
+*/
+
+    /**
+     * Formats the date.
+     * @param {string} str - The format string.
+     * @returns {string} The formatted date.
+     */
 	format(str = '') {
 		let dateStr = '';
 
@@ -87,10 +134,13 @@ class D {
 		return dateStr;
 	}
 
-	// Challenge 4 
-	// Make a when() method 
-	// This method should compare the date owned by your class instance with the current date.
-
+	/**Challenge 4 
+	Make a when() method 
+	This method should compare the date owned by your class instance with the current date. */ 
+    /**
+     * Compares the date owned by the class instance with the current date.
+     * @returns {string} A string describing the difference between the two dates.
+     */
 	when () {
 		const now = new Date()
 		const day = this._date
@@ -112,6 +162,10 @@ class D {
 	}
 
 }
+
+// Edge Case:
+// Problem: 
+
 
 const d = new D(new Date()) // with another date object
 
