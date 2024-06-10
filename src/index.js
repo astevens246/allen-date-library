@@ -87,6 +87,30 @@ class D {
 		return dateStr;
 	}
 
+	// Challenge 4 
+	// Make a when() method 
+	// This method should compare the date owned by your class instance with the current date.
+
+	when () {
+		const now = new Date()
+		const day = this._date
+		const diff = now - day
+		const diffDays = Math.round(diff / (1000 * 60 * 60 * 24))
+		const diffMonths = Math.round(diffDays / 30)
+		const diffYears = Math.round(diffDays / 365)
+
+		if (diffDays === 0) {
+			return 'Today'
+		} else if (Math.abs(diffDays) < 30) {
+			return diffDays > 0 ? `${diffDays} days ago` : `${Math.abs(diffDays)} days from now`
+		} else if (Math.abs(diffMonths) < 12) {
+			return diffMonths > 0 ? `${diffMonths} months ago` : `${Math.abs(diffMonths)} months from now`
+		} else {
+			return diffYears > 0 ? `${diffYears} years ago` : `${Math.abs(diffYears)} years from now`
+		}
+
+	}
+
 }
 
 const d = new D(new Date()) // with another date object
@@ -101,5 +125,10 @@ console.log( d.date )  // 27   - Date
 console.log( d.hours ) // 18   - Hour
 console.log( d.mins )  // 6    - Minutes
 console.log( d.secs )  // 5    - Seconds
+
+
+const specificDate = new Date('2011-12-31'); // Set the date to December 31, 2022
+const dSpecific = new D(specificDate);
+console.log(dSpecific.when()); // Prints the difference between the current date and December 31, 2022
 
 module.exports = D
