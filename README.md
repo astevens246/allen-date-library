@@ -1,4 +1,5 @@
-# Initial Commit
+# NPM Package link: https://www.npmjs.com/package/allens-date-library
+
 
 ## API
 
