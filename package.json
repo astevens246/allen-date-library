@@ -1,6 +1,6 @@
 {
   "name": "allens-date-library",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "date library for date manipulation",
   "main": "src/index.js",
   "directories": {
@@ -12,6 +12,7 @@
   "keywords": [],
   "author": "Allen Stevens",
   "license": "ISC",
+  "repository": "https://github.com/astevens246/allen-date-library.git",
   "devDependencies": {
     "jest": "^29.7.0"
   }
