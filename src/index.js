@@ -176,7 +176,7 @@ class D {
 
 		// Adjust for leap years
 		if (isLeapYear(day.getFullYear()) && day.getMonth() > 1) {
-			diffDays += 1
+			diffDays + 1
 		}
 
 		if (diffDays === 0) { /** if the difference in days is 0, return 'Today' */
