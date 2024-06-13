@@ -1,8 +1,8 @@
 {
-  "name": "date-library",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "allens-date-library",
+  "version": "1.0.1",
+  "description": "date library for date manipulation",
+  "main": "src/index.js",
   "directories": {
     "test": "tests"
   },
@@ -10,7 +10,7 @@
     "test": "jest --verbose"
   },
   "keywords": [],
-  "author": "",
+  "author": "Allen Stevens",
   "license": "ISC",
   "devDependencies": {
     "jest": "^29.7.0"

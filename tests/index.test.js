@@ -54,3 +54,13 @@ test('D.secs', () => {
     expect(d.secs).toBe(today.getSeconds())
     expect(bDay.secs).toBe(0)
 })
+
+test ('format()', () => {
+    expect(d.format('Y-M-D')).toBe(`${today.getFullYear()}-${months[today.getMonth()]}-${today.getDate()}`)
+    expect(bDay.format('Y-M-D')).toBe('1993-August-26')
+})
+
+test ('when()', () => {
+    expect(d.when()).toBe('Today')
+    expect(bDay.when()).toBe('31 years ago')
+})
