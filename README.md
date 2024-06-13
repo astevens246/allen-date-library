@@ -136,3 +136,9 @@ Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/G
 
 ## Badges
 ![npm bundle size](https://img.shields.io/bundlephobia/min/allens-date-library)
+
+![Version](https://img.shields.io/npm/v/allens-date-library)
+
+![NPM License](https://img.shields.io/npm/l/allens-date-library)
+
+![GitHub issues](https://img.shields.io/github/issues-raw/allen/date-library)
